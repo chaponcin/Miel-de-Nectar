@@ -1,0 +1,22 @@
+.honey-footer {
+    background-color: #f8d14e;  
+    padding: 0 20px;  /* Adjust padding if needed */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* Centers content vertically */
+    height: 100px; 
+  }
+  
+  /* Set the logo size in the footer */
+  .honey-footer .logo img {
+    width: 50px; /* Define the logo's width */
+    height: auto; /* Adjust height automatically to maintain aspect ratio */
+    object-fit: contain; /* Keeps the logo's aspect ratio intact */
+  }
+  
+  /* Text inside the footer */
+  .honey-footer p {
+    margin-top: 10px; /* Adjust margin if needed */
+  }
+  

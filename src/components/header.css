@@ -1,0 +1,48 @@
+.honey-header {
+    background-color: #f8d14e;
+    padding: 20px;
+    text-align: center;
+  }
+  
+
+  
+  /* Set the logo size in the footer */
+  .honey-footer .logo img {
+    width: 50px; /* Define the logo's width */
+    height: auto; /* Adjust height automatically to maintain aspect ratio */
+    object-fit: contain; /* Keeps the logo's aspect ratio intact */
+  }
+
+  /* Style for the navigation */
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: center; /* Centers the items horizontally */
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+  }
+  
+  /* Style for individual list items */
+  .nav-list li {
+    margin: 10px;
+  }
+  
+  /* Optional: Style the links */
+  .nav-list a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+  /* Ensure the first three buttons are on one line */
+  .nav-list li:nth-child(-n+3) {
+    flex: 1 1 30%; /* Each of the first three items takes up about 30% of the width */
+    text-align: center;
+  }
+  
+  /* Ensure the next three buttons are on the next line */
+  .nav-list li:nth-child(n+4) {
+    flex: 1 1 30%; /* Each of the next three items also takes up about 30% of the width */
+    text-align: center;
+  }
+  

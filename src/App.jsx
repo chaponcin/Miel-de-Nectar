@@ -13,7 +13,7 @@ function App() {
         
         <main>
           <section>
-
+            <h2>Miel 100% local et artisanal</h2>
           </section>
         </main>
 
