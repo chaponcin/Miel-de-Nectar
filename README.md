@@ -1,5 +1,6 @@
-# Miel-de-Nectar
-bash
+# React
+
+Git Bash
 
 node -v  # To check the installed Node.js version
 
