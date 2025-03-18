@@ -1,7 +1,7 @@
 # 1:  with React
 
 
-Git Bash
+Git Bash:
 
 node -v  # To check the installed Node.js version
 
