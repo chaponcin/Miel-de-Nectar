@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(255, 255, 255, 0.856);
   background-color: #242424;
 
   font-synthesis: none;
@@ -13,13 +13,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.header-bg {
+  background-image: url('./assets/Vector.svg');
+}
+
+.footer-bg {
+  background-image: url('./assets/Vector2.svg');
+}
+
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #a75e00;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #ac6406;
 }
 
 body {
@@ -47,7 +55,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #815502;
 }
 button:focus,
 button:focus-visible {
@@ -60,7 +68,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #cf7f16;
   }
   button {
     background-color: #f9f9f9;
