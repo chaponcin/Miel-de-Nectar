@@ -1,7 +1,7 @@
 function register() {
   return (
     <div className="text-center">
-      <h1>Register</h1>
+      <h1>Inscription</h1>
     </div>
   );
 }

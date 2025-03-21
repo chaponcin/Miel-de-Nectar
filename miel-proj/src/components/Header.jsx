@@ -21,7 +21,7 @@ function Header() {
         <Link to="/Contact" className="text-black">Contact</Link>
         </li>
         <li>
-        <Link to="/quisommesnous" className="text-black">qui sommes-nous</Link>
+        <Link to="/quisommesnous" className="text-black">Qui sommes-nous</Link>
         </li>
     </ul>
 </nav>
@@ -30,8 +30,8 @@ function Header() {
         <Link to="/pannier">
           <img src="./src/assets/pannier.svg" alt="Panier" className="h-6" />
         </Link>
-        <Link to="/register" className="text-black">Register</Link>
-        <Link to="/login" className="text-black">Login</Link>
+        <Link to="/register" className="text-black">Inscription</Link>
+        <Link to="/login" className="text-black">Connexion</Link>
       </nav>
     </header>
   );

@@ -1,7 +1,7 @@
 function QuiSommesNous() {
     return (
       <div className="text-center">
-        <h1>qui sommes-nous</h1>
+        <h1>Qui sommes-nous</h1>
       </div>
     );
   }
