@@ -8,7 +8,7 @@ class UserController extends Controller
 {
     public function getUserById(Request $request, $id)
     {
-        #Vérifier l'utilisateur avec le Baerer
+        #Vérifier l'utilisateur avec le Baerer pour l'avoir faut que j'utilise la fonction profile pour avoir le Bear de l'user
         #try
         #Faire la Query pour delete l'User
         #catch retourne l'erreur "message" => $message "status" => false
