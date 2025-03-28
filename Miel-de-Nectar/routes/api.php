@@ -4,20 +4,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\CommandeController;
+use Illuminate\Support\Facades\Artisan;
 
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
-
-Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
+Route::post('signup', [AuthController::class, 'signup']);
 
 Route::group(["middleware" => ["auth:api"]], function(){
     Route::get('profile', [AuthController::class, 'profile']);
-    Route::post('refreshToken', [AuthController::class, 'refresh']);
+    Route::post('refresh', [AuthController::class, 'refresh']);
     Route::post('logout', [AuthController::class, 'logout']);
-    Route::put('update',[UserController::class, 'register']);
-    Route::delete('delete',[UserController::class, 'register']);
+    Route::put('update',[UserController::class, 'update']);
+    Route::delete('delete',[UserController::class, 'delete']);
 });
 
