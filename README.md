@@ -6,6 +6,4 @@ L’objectif principal est de développer une plateforme moderne et intuitive, p
 
 Dans un monde de plus en plus connecté, il est essentiel pour toute entreprise d’avoir une présence en ligne qui reflète son identité et facilite l'accès à ses produits.
 
-Le front-end est réalisé avec React et Tailwind.
-
-Le back-end est développé avec Laravel.
+Le front-end est réalisé avec React et Tailwind. Le back-end est développé avec Laravel 12 et php 8.2.
