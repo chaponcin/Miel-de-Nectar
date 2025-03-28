@@ -6,7 +6,9 @@ function Header() {
       className="header-bg h-60 flex justify-between items-start px-6 py-4"
     >
       <h1 className="text-xl font-bold text-black">
-  <Link to="/" className="hover:underline">Titre</Link>
+  <Link to="/">
+  <img src="./src/assets/pot-accueil.svg" className="h-16"/>
+  </Link>
 </h1>
 
 <nav>
@@ -32,7 +34,7 @@ function Header() {
         </Link>
         <Link to="/register" className="text-black">Inscription</Link>
         <Link to="/login" className="text-black">Connexion</Link>
-      </nav>
+    </nav>
     </header>
   );
 }

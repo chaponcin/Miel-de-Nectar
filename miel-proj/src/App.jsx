@@ -8,6 +8,7 @@ import Register from './pages/register';
 import Pannier from './pages/pannier';
 import Boutique from './pages/boutique';
 import Contact from './pages/contact';
+import User from './pages/user';
 import QuiSommesNous from './pages/quisommesnous';
 import './App.css';
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/boutique" element={<Boutique />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/quisommesnous" element={<QuiSommesNous />} />
+          <Route path="/user" element={<User />} />
         </Routes>
       </main>
       <Footer />

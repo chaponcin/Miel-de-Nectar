@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 function Login() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center">
       
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
