@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 function Header() {
   return (
     <header 
-      className="header-bg h-60 flex justify-between items-start px-6 py-4"
-    >
+    className="footer-bg h-20 w-3/4 mx-auto flex justify-between items-center px-6 py-2 bg-cover bg-center rounded-lg shadow-md"
+  >
       <h1 className="text-xl font-bold text-black">
   <Link to="/">
   <img src="./src/assets/pot-accueil.svg" className="h-16"/>
