@@ -19,4 +19,14 @@ class Avis extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
+
+    public function produit()
+    {
+        return $this->belongsTo(Produit::class, 'id_produit');
+    }
 }

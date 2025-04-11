@@ -18,4 +18,9 @@ class Recette extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function ingredient()
+    {
+        return $this->belongsTo(Ingredient::class, 'id_ingredient');
+    }
 }

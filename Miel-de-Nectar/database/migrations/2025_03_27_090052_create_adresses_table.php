@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('adresses', function (Blueprint $table) {
-            $table->id('id_adresse');
+            $table->id();
             $table->timestamps();
             $table->string('rue', 50);
-            $table->integer('code_postal'); // Fixed type and removed trailing comma
+            $table->integer('code_postal');
             $table->string('ville', 60);
             $table->string('pays', 30);
-            $table->integer('num'); // Fixed column name from 'num' to 'numéro'
-            $table->integer('boite')->nullable(); // Made 'boite' nullable
+            $table->integer('numero');
+            $table->integer('boite')->nullable();
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });

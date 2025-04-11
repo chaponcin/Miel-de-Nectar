@@ -18,4 +18,14 @@ class CommandesProduit extends Model
         'price',
         // Add other columns as needed
     ];
+
+    public function commande()
+    {
+        return $this->belongsTo(Commande::class, 'id_commande');
+    }
+
+    public function produit()
+    {
+        return $this->belongsTo(Produit::class, 'id_produit');
+    }
 }

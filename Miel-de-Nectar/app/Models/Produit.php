@@ -18,4 +18,24 @@ class Produit extends Model
         'stock',
         // Add other columns as needed
     ];
+
+    public function avis()
+    {
+        return $this->hasMany(Avis::class, 'id_produit');
+    }
+
+    public function categorie()
+    {
+        return $this->belongsTo(Categorie::class, 'id_categorie');
+    }
+
+    public function stocks()
+    {
+        return $this->hasMany(Stock::class, 'id_produit');
+    }
+
+    public function commandesProduits()
+    {
+        return $this->hasMany(CommandesProduit::class, 'id_produit');
+    }
 }

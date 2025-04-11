@@ -17,4 +17,9 @@ class Ingredient extends Model
         'quantity',
         'unit',
     ];
+
+    public function recettes()
+    {
+        return $this->hasMany(Recette::class, 'id_ingredient');
+    }
 }

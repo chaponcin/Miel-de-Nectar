@@ -16,4 +16,9 @@ class Categorie extends Model
         'description',
         // Add other columns as needed
     ];
+
+    public function produits()
+    {
+        return $this->hasMany(Produit::class, 'id_categorie');
+    }
 }

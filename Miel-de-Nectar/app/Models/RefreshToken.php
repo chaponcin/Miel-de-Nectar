@@ -9,11 +9,20 @@ class RefreshToken extends Model
 {
     use HasFactory;
 
-    protected $table = 'refresh_tokens';
+    protected $fillable = ['token', 'expired_at', 'revoked', 'user_id'];
 
-    protected $fillable = [
-        'user_id',
-        'token',
-        'expires_at',
+    protected $casts = [
+        'expired_at' => 'datetime',
+        'revoked' => 'boolean',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function isValid()
+    {
+        return !$this->revoked && $this->expired_at->isFuture();
+    }
 }

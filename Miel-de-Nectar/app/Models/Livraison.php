@@ -17,4 +17,19 @@ class Livraison extends Model
         'status',
         'delivery_date',
     ];
+
+    public function commande()
+    {
+        return $this->belongsTo(Commande::class, 'id_commande');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
+
+    public function adresse()
+    {
+        return $this->belongsTo(Adresse::class, 'id_adresse');
+    }
 }

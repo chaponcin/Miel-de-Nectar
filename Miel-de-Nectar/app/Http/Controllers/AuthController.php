@@ -5,59 +5,82 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Models\User;
-use Tymon\JWTAuth\Facades\JWTAuth;
-use Tymon\JWTAuth\Exceptions\JWTException;
+use App\Http\Controllers\RefreshTokensController;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\JsonResponse;
+use Laravel\Passport\Bridge\RefreshToken;
 
 class AuthController extends Controller
 {
-    public function login(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
-        try {
-            if (! $token = JWTAuth::attempt($credentials)) {
-                return response()->json(['error' => 'invalid_credentials'], 400);
-            }
-        } catch (JWTException $e) {
-            return response()->json(['error' => 'could not create token'], 500);
-        }
 
-        return response()->json(compact('token'), 201);
-    }
 
-    public function signup(Request $request)
+    public function register(Request $request): JsonResponse
     {
-        $request->validate([
-            'name' => 'required|string|max:60',
-            'email' => 'required|string|email|max:60|unique:users',
-            'password' => 'required|string|min:6',
+        $data = $request->validate([
+            'name' => 'required|min:2|max:60',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6|confirmed'
         ]);
-        try {
-            $user = new User([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => bcrypt($request->password),
-            ]);
-            $user->save();
-            $token = JWTAuth::fromUser($user);
-        } catch (\Throwable $th) {
-            return response()->json(['error' => $th]);
-        }
+
+        $data['name'] = htmlspecialchars($data['name']);
+        $data['email'] = htmlspecialchars($data['email']);
+        $data['password'] = bcrypt(htmlspecialchars($data['password']));
+
+        $user = User::create($data);
+        $userData = (object) ['id' => $user->id, 'role' => $user->role];
+        $accessToken = $userData->createToken('API Token')->accessToken;
+        $refreshToken = RefreshTokensController::storeRefreshToken($user->id);
         return response()->json([
-            'user_id' => $user->id,
-            'token' => $token
-        ], 201);
+            '$accessToken' => $accessToken,
+            '$refreshToken' => $refreshToken],
+            201
+        );
     }
 
-
-    public function logout()
+    public function login(Request $request): JsonResponse
     {
-        JWTAuth::invalidate(JWTAuth::getToken());
-        return response()->json(['message' => 'Successfully logged out'], 200);
+        $data = $request->validate([
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6|confirmed'
+        ]);
+
+        $data['email'] = htmlspecialchars($data['name']);
+        $data['password'] = htmlspecialchars($data['password']);
+
+        if (!Auth::attempt($data)) {
+            return response()->json(['error_message' => 'Incorrect Details. Please try again'], 401);
+        }
+
+        $id = Auth::user()->id;
+        $role = Auth::user()->role;
+        $userData = (object) ['id' => $id, 'role' => $role];
+        $accessToken = $userData->createToken('API Token')->accessToken;
+        $refreshToken = RefreshTokensController::storeRefreshToken($id);
+        return response()->json([
+            '$accessToken' => $accessToken,
+            '$refreshToken' => $refreshToken],
+            201
+        );
     }
 
-    public function refresh()
-    {
-        $token = JWTAuth::refresh(JWTAuth::getToken());
-        return response()->json(compact('token'), 201);
+    public function logout($id_user, Request $request){
+        try {
+            RefreshTokensController::revokeUser($id_user);
+            return response()->json([
+                'status' => true,
+                'message' => "The user is log out"],
+                201
+            );
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => false,
+                'message' => $th->getMessage()],
+                500
+            );
+        }
     }
+
+
 }

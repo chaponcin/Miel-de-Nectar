@@ -18,4 +18,9 @@ class Paiment extends Model
         'status',
         'payment_date',
     ];
+
+    public function commande()
+    {
+        return $this->belongsTo(Commande::class, 'id_commande');
+    }
 }
