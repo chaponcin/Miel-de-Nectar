@@ -19,18 +19,17 @@ class AuthController extends Controller
     public function register(Request $request): JsonResponse
     {
         $data = $request->validate([
-            'name' => 'required|min:2|max:60',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|confirmed'
+            'name' => 'required|string|min:2|max:60',
+            'email' => 'required|string|email|unique:users',
+            'password' => 'required|string|min:6'
         ]);
-
         $data['name'] = htmlspecialchars($data['name']);
         $data['email'] = htmlspecialchars($data['email']);
         $data['password'] = bcrypt(htmlspecialchars($data['password']));
 
         $user = User::create($data);
-        $userData = (object) ['id' => $user->id, 'role' => $user->role];
-        $accessToken = $userData->createToken('API Token')->accessToken;
+        //$userData = (object) ['id' => $user->id, 'role' => $user->role];
+        $accessToken = $user->createToken('API Token')->accessToken;
         $refreshToken = RefreshTokensController::storeRefreshToken($user->id);
         return response()->json([
             '$accessToken' => $accessToken,
@@ -42,11 +41,11 @@ class AuthController extends Controller
     public function login(Request $request): JsonResponse
     {
         $data = $request->validate([
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|confirmed'
+            'email' => 'required|string|email|unique:users',
+            'password' => 'required|string|min:6'
         ]);
 
-        $data['email'] = htmlspecialchars($data['name']);
+        $data['email'] = htmlspecialchars($data['email']);
         $data['password'] = htmlspecialchars($data['password']);
 
         if (!Auth::attempt($data)) {
@@ -65,7 +64,7 @@ class AuthController extends Controller
         );
     }
 
-    public function logout($id_user, Request $request){
+    public function logout($id_user){
         try {
             RefreshTokensController::revokeUser($id_user);
             return response()->json([

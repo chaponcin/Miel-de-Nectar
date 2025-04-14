@@ -5,28 +5,22 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Laravel\Passport\Passport;
+use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * The policy mappings for the application.
-     *
-     * @var array
-     */
-    protected $policies = [
-        'App\Models\Model' => 'App\Policies\ModelPolicy',
-    ];
-        /**
-     * Register any authentication / authorization services.
+     * Bootstrap any application services.
      *
      * @return void
      */
     public function boot()
     {
-        Passport::tokensExpireIn(now()->addHours(1));
-        Passport::refreshTokensExpireIn(now()->addDays(30));
         Schema::defaultStringLength(191);
-        //Passport::routes();
-        Passport::enablePasswordGrant();
+
+        Passport::tokensExpireIn(now()->addDays(15));
+        Passport::refreshTokensExpireIn(now()->addDays(30));
+        Passport::personalAccessTokensExpireIn(now()->addMonths(6));
+        Passport::loadKeysFrom(__DIR__.'/../secrets/oauth');
     }
 }
