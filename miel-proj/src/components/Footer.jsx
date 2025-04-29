@@ -1,11 +1,17 @@
 // src/components/Footer.jsx
 function Footer() {
-    return (
-      <footer className="footer-bg h-20 flex justify-between items-center px-6">
-        <p>© 2025 BECODE - Tous droits réservés</p>
-      </footer>
-    );
-  }
-  
-  export default Footer;
-  
+  return (
+    <footer className="bg-black text-white py-6 px-8 mt-auto">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+        <p>© 2025 <span className="font-semibold">BECODE</span>. Tous droits réservés.</p>
+        <div className="flex space-x-4">
+          <a href="/mentions-legales" className="hover:underline">Mentions légales</a>
+          <a href="/politique-confidentialite" className="hover:underline">Confidentialité</a>
+          <a href="/contact" className="hover:underline">Contact</a>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;
