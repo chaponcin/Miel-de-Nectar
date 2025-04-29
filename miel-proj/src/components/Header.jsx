@@ -11,7 +11,9 @@ function Header() {
   };
 
   return (
+
     <header className="footer-bg fixed top-0 left-0 w-full z-50 h-20 flex justify-between items-center px-6 py-2 bg-white bg-cover bg-center shadow-md">
+
       <h1 className="text-xl font-bold text-black">
         <Link to="/">
           <img src="./src/assets/appi.png" className="h-16" />
