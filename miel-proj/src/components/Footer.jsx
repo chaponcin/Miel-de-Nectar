@@ -1,6 +1,5 @@
 // src/components/Footer.jsx
 function Footer() {
-
   return (
     <footer className="bg-black text-white py-6 px-8 mt-auto">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm">

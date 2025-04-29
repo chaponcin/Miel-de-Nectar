@@ -11,9 +11,7 @@ function Header() {
   };
 
   return (
-
     <header className="footer-bg fixed top-0 left-0 w-full z-50 h-20 flex justify-between items-center px-6 py-2 bg-white bg-cover bg-center shadow-md">
-
       <h1 className="text-xl font-bold text-black">
         <Link to="/">
           <img src="./src/assets/appi.png" className="h-16" />
@@ -36,13 +34,18 @@ function Header() {
 
         {!isLoggedIn ? (
           <>
-            <Link to="/register" className="text-black">Inscription</Link>
-            <Link to="/login" className="text-black">Connexion</Link>
+            <Link to="/register" className="text-white bg-black hover:bg-green-900 font-bold px-2 py-1 rounded-lg transition">Inscription</Link>
+            <Link to="/login" className="text-white bg-black hover:bg-green-900 font-bold px-2 py-1 rounded-lg transition">Connexion</Link>
           </>
         ) : (
         <>
-          <Link to="/profile" className="text-black">Mon Compte</Link>
-          <button onClick={handleLogout} className="text-red-500 font-bold hover:underline">Déconnexion</button>
+          <Link to="/profile" className="text-white bg-black hover:bg-green-900 font-bold px-2 py-1 rounded-lg transition">Mon Compte</Link>
+          <button
+        onClick={handleLogout}
+        className="text-white bg-red-600 hover:bg-red-700 font-bold px-2 py-1 rounded-lg transition"
+      >
+        Déconnexion
+      </button>
         </>
         )}
       </nav>

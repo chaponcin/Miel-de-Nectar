@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import heroBackground from '../assets/appi.png';
-import aboutBackground from '../assets/appi.png';
+import heroBackground from '../assets/fond1.png';
+import aboutBackground from '../assets/fond2.png';
 import productsBackground from '../assets/appi.png';
 import contactBackground from '../assets/appi.png';
 
@@ -49,7 +49,6 @@ const Section = ({ children, background, custom }) => (
 
 const Home = () => {
   return (
-
     <div className="flex flex-col rounded-t-2xl pt-10">
       <Section background={heroBackground} custom={0}>
         <h1 className="text-5xl font-bold mb-4 text-yellow-400 drop-shadow-[2px_2px_4px_rgba(0,0,0,0.8)]">

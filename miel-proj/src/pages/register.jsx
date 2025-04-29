@@ -74,9 +74,7 @@ function Register() {
   };
 
   return (
-
     <div className="text-center flex flex-col items-center justify-center">
-
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -85,7 +83,6 @@ function Register() {
       >
         Inscription
       </motion.h1>
-
 
       {!isLoggedIn ? (
         <motion.div
@@ -182,7 +179,6 @@ function Register() {
            Vous êtes déjà connecté
         </div>
       )}
-
     </div>
   );
 }
