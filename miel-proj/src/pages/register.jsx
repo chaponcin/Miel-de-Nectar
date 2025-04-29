@@ -61,6 +61,7 @@ function Register() {
         </form>
       </motion.div>
     </div>
+    
   );
 }
 
