@@ -69,6 +69,7 @@ function Register() {
         </div>
       </motion.div>
     </div>
+    
   );
 }
 
