@@ -57,12 +57,25 @@ class AddresseController extends Controller
     {
 
     }
-    public function deleteAddresse($id_user, Request $request)
+    public function deleteAddresse($id)
     {
+        try {
+            $product = Adresse::findOrFail($id);
+            $product->delete();
 
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Product deleted successfully',
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => 'Failed to delete product',
+                'error' => $e->getMessage()
+            ], 500);
+        }
     }
 
-    public function updateAddresse(Requeste $request)
+    public function updateAddresse(Request $request)
     {
 
     }

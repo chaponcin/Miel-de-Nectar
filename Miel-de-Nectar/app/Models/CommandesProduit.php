@@ -16,7 +16,6 @@ class CommandesProduit extends Model
         'produit_id',
         'quantity',
         'price',
-        // Add other columns as needed
     ];
 
     public function commande()

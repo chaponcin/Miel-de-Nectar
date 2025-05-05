@@ -21,13 +21,17 @@ Route::get('produits/{id}', [ProduitController::class, 'getProductById']);
 Route::group(["middleware" => ["auth:api"]],function () {
     Route::post('logout/{id}', [AuthController::class, 'logout']);
 
+    Route::update('produits/{id}', [ProduitController::class, 'updatetProductById']);
+    Route::delete('produits/{id}', [ProduitController::class, 'deleteProductById']);
+    Route::post('produits/{id}', [ProduitController::class, 'storeProduct']);
     // User Routes
     Route::get('/users/{id}', [UserController::class, 'getUserById']);
     Route::delete('/users/{id}', [UserController::class, 'deleteUserById']);
     Route::put('/users/{id}', [UserController::class, 'updateUserById']);
 
     // Commande Routes
-    Route::post('/commandes', [CommandeController::class, 'storeCommande']);
+    Route::post('/commande', [CommandeController::class, 'storeCommande']);
+    Route::put('/commandes/{id}/list', [CommandeController::class, 'getAllCommandes']);
     Route::put('/commandes/{id}/list', [CommandeController::class, 'updateCommande']);
     Route::delete('/commandes/{id}', [CommandeController::class, 'deleteCommande']);
 

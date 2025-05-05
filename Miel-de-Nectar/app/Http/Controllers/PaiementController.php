@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Models\User;
-use App\Http\Controllers\RefreshTokensController;
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\JsonResponse;
-use Laravel\Passport\Bridge\RefreshToken;
+use App\Models\Paiement;
+
 
 class PaiementController extends Controller
 {
-
+    public function storePaiement(Request $request){
+        $data = $request->validate([
+            'rue' => 'required|string|min:2|max:60',
+            'code_postal' => 'required|int|max:10',
+        ]);
+    }
+    public function getPaiementById($id){}
 }
