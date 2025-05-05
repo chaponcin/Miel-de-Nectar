@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Routing\Controller;
 use App\Models\User;
 use App\Http\Controllers\RefreshTokensController;
@@ -19,7 +20,7 @@ class AuthController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|string|min:2|max:60',
-            'email' => 'required|string|email|unique:users',
+            'email' => 'required|string|email|unique:users,email',
             'password' => 'required|string|min:6'
         ]);
         $data['name'] = htmlspecialchars($data['name']);
@@ -40,7 +41,7 @@ class AuthController extends Controller
     public function login(Request $request): JsonResponse
     {
         $data = $request->validate([
-            'email' => 'required|string|email|unique:users',
+            'email' => 'required|string|email|unique:users,email',
             'password' => 'required|string|min:6'
         ]);
 
@@ -80,7 +81,20 @@ class AuthController extends Controller
         }
     }
 
+    public function testLogin(Request $request){
 
+        $response = Http::asForm()->post(url('/auth/token'), [
+            "grant_type" => "password",
+            "client_id" => env("CLIENT_ID"),
+            "client_secret" => env("CLIENT_SECRET"),
+            "username" => "martin@test",
+            "password" => "testing",
+            "scope" => "",
+        ]);
+        return $response()->json([
+
+        ]);
+    }
 }
 
 
