@@ -17,7 +17,7 @@ function User() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="w-80 bg-white p-6 rounded-lg shadow-lg"
+        className="w-80 bg-white p-5 rounded-lg shadow-lg"
       >
 
         <h2 className="text-lg mb-2">Nom:</h2>
