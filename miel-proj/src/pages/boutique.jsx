@@ -9,7 +9,7 @@ export default function HoneyProduct() {
   const totalPrice = pricePerJar * quantity;
 
   return (
-<div className="flex flex-col items-center justify-center pt-[200px]">
+<div className="flex flex-col items-center justify-center pt-[100px]">
 
       {/* Titre avec effet d'apparition */}
       <motion.h1

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Contact = () => {
   return (
-    <div className="flex flex-col items-center justify-center pt-[200px]">
+    <div className="flex flex-col items-center justify-center pt-[100px]">
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
