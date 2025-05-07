@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import heroBackground from '../assets/appi.png';
-import aboutBackground from '../assets/appi.png';
-import productsBackground from '../assets/appi.png';
-import contactBackground from '../assets/appi.png';
+import heroBackground from '../assets/appi.jpg';
+import aboutBackground from '../assets/appi.jpg';
+import productsBackground from '../assets/appi.jpg';
+import contactBackground from '../assets/appi.jpg';
 
 const sectionVariants = {
   hidden: (i) => ({
@@ -107,7 +107,7 @@ const Home = () => {
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 1.2, ease: 'easeOut' }}
   >
-    <h2 className="text-4xl font-semibold mb-6 text-black drop-shadow">Contactez-Nous</h2>
+    <h2 className="text-4xl font-semibold mb-6 text-black drop-shadow">Contactez-nous</h2>
     <p className="text-black text-lg mb-4">
       Une question ? Nous sommes toujours ravis de vous lire.
     </p>

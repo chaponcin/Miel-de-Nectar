@@ -9,7 +9,9 @@ import Pannier from './pages/pannier';
 import Boutique from './pages/boutique';
 import Contact from './pages/contact';
 import User from './pages/user';
-import QuiSommesNous from './pages/quisommesnous';
+import Recettes from './pages/recettes';
+import Achete from './pages/achat';
+import Hamburger from './pages/hamburger';
 import './App.css';
 
 function App() {
@@ -20,12 +22,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pannier" element={<Pannier />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/connexion" element={<Login />} />
+          <Route path="/inscription" element={<Register />} />
           <Route path="/boutique" element={<Boutique />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/quisommesnous" element={<QuiSommesNous />} />
+          <Route path="/recettes" element={<Recettes />} />
           <Route path="/user" element={<User />} />
+          <Route path="/achat" element={<Achete />} />
+          <Route path="/menu" element={<Hamburger />} />
+      
         </Routes>
       </main>
       <Footer />

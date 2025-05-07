@@ -2,7 +2,8 @@
 function Footer() {
 
   return (
-    <footer className="bg-black text-white py-6 px-8 mt-auto">
+<footer className="bg-black text-white py-6 px-8 mt-auto h-[75px] bg-no-repeat flex items-end">
+
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
         <p>© 2025 <span className="font-semibold">BECODE</span>. Tous droits réservés.</p>
         <div className="flex space-x-4">
