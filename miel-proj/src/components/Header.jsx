@@ -45,6 +45,7 @@ function Header() {
         <nav className="hidden md:flex items-start space-x-4 mt-2 py-10">
           <Link to="/" className="text-black">Home</Link>
           <Link to="/Boutique" className="text-black">Boutique</Link>
+          <Link to="/quisommes-nous" className="text-black">Qui sommes-nous</Link>
           <Link to="/recettes" className="text-black">Recettes</Link>
           <Link to="/Contact" className="text-black">Contact</Link>
         </nav>

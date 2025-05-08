@@ -12,6 +12,7 @@ import User from './pages/user';
 import Recettes from './pages/recettes';
 import Achete from './pages/achat';
 import Hamburger from './pages/hamburger';
+import Qui from './pages/qui';
 import './App.css';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/user" element={<User />} />
           <Route path="/achat" element={<Achete />} />
           <Route path="/menu" element={<Hamburger />} />
+          <Route path="/quisommes-nous" element={<Qui />} />
       
         </Routes>
       </main>
