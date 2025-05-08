@@ -56,21 +56,19 @@ const Home = () => {
           Bienvenue sur Notre Site
         </h1>
         <p className="text-lg text-white drop-shadow-[1px_1px_3px_rgba(0,0,0,0.7)]">
-          Découvrez notre collection exclusive d'articles soigneusement sélectionnés pour vous.
-        </p>
+        Goûtez à l’authenticité d’un miel local, naturel et respectueux des abeilles.        </p>
       </Section>
 
       <Section background={aboutBackground} custom={1}>
         <h2 className="text-4xl font-semibold mb-6 text-white drop-shadow">À propos de nous</h2>
         <p className="text-white text-lg">
-          Nous sommes passionnés par la qualité et l'originalité. Notre mission est de vous proposer des produits uniques qui répondent à vos attentes.
-        </p>
+        Nous pratiquons une apiculture raisonnée, sans pesticides, sans nourrissement artificiel, pour préserver la santé des abeilles et la qualité du miel.</p>
       </Section>
 
       <Section background={productsBackground} custom={2}>
-        <h2 className="text-4xl font-semibold mb-6 text-white drop-shadow">Nos Produits</h2>
+        <h2 className="text-4xl font-semibold mb-6 text-white drop-shadow">Notre Produit</h2>
         <p className="text-white text-lg">
-          Explorez une large gamme de produits soigneusement sélectionnés. Chaque article est choisi avec amour.
+        Un miel local, issu d’une apiculture douce, à savourer au quotidien.
         </p>
       </Section>
 

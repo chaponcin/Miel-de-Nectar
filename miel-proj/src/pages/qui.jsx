@@ -20,19 +20,21 @@ function Qui() {
 
 
     
-            <p className="mb-6 italic font-bold  text-2xl text-center pt-[15px]">
-              Une approche respectueuse des <br></br>abeilles pour assurer leur survie.
+            <p className="mb-9 italic font-bold  text-2xl text-center pt-[15px]">
+              Une approche respectueuse des abeilles pour assurer leur survie.
             </p>
     
-            <p className="mb-6">
-              Les abeilles jouent un rôle vital dans notre écosystème en tant que pollinisateurs clés.
-              Malheureusement, ces dernières années, les populations d'abeilles ont connu un déclin
-              alarmant en raison de divers facteurs tels que l’utilisation intensive des pesticides, la perte
-              d'habitats naturels et les maladies.
-              Cependant, une approche émergente de l'apiculture, connue sous le nom d'apiculture raisonnée,
-              offre un espoir pour inverser cette tendance en promouvant le respect des abeilles et de leur
-              environnement.
-            </p>
+            <p className="mb-6 text-justify indent-13 ">
+  Les abeilles jouent un rôle vital dans notre écosystème en tant que pollinisateurs clés. Malheureusement, ces dernières années, les populations d'abeilles ont connu un déclin
+  alarmant en raison de divers facteurs tels que l’utilisation intensive des pesticides, la perte
+  d'habitats naturels et les maladies. Cependant, une approche émergente de l'apiculture, connue sous le nom d'apiculture raisonnée,
+  offre un espoir pour inverser cette tendance en promouvant le respect des abeilles et de leur
+  environnement.
+</p>
+
+
+
+
     
             <h2 className="mt-10 mb-4 underline">1. Comprendre les besoins des abeilles :</h2>
     
@@ -65,8 +67,23 @@ function Qui() {
           {/* Third square container */}
           <div className="border border-gray-300 w-[500px] p-8 bg-white mb-10">
             <p className="mb-6">
-              Jouer un rôle de sensibilisation en partageant notre savoir-faire et en éduquant les autres sur l'importance des abeilles pour notre écosystème. Des ateliers, des formations et des événements seront organisés pour encourager davantage de personnes à s'impliquer dans la préservation des abeilles.
-              <br></br><br></br>
+            jouer un rôle de sensibilisation en partageant notre savoir-
+faire et en éduquant les autres sur l'importance des
+abeilles pour notre écosystéme. Des ateliers, des
+formations et des événements seront organisés pour
+encourager davantage de personnes a s'impliquer dans la
+préservation des abeilles.
+
+L'apiculture raisonnée offre une approche respectueuse et
+durable de l'apiculture, qui vise a assurer la survie des
+abeilles en préservant leur santé et leur environnement.
+En achetant nos produits, vous nous aidez et vous
+contribuez a renverser la tendance du déclin des
+populations d'abeilles et a préserver la biodiversité de
+notre planéte. Il est temps que nous prenions
+collectivement des mesures pour promouvoir le respect
+des abeilles et pour garantir un avenir ou elles
+continueront a prospérer dans nos écosystémes.              <br></br><br></br>
               L'apiculture raisonnée offre une approche respectueuse et durable de l'apiculture, qui vise à assurer la survie des abeilles en préservant leur santé et leur environnement. En achetant nos produits, vous nous aidez et vous contribuez à renverser la tendance du déclin des populations d'abeilles et à préserver la biodiversité de notre planète. Il est temps que nous prenions collectivement des mesures pour promouvoir le respect des abeilles et pour garantir un avenir où elles continueront à prospérer dans nos écosystèmes.
             </p>
           </div>

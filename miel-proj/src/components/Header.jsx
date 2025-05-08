@@ -17,7 +17,8 @@ function Header() {
   };
 
   return (
-    <header className="footer-bg fixed top-0 left-0 w-full z-50 px-6 bg-cover bg-center bg-transparent top-[-40px]">
+<header className="footer-bg fixed top-0 left-0 w-full   z-50 px-6 bg-cover bg-center bg-transparent top-[-40px]">
+
       <div className="flex justify-between items-start">
         <h1 className="text-xl font-bold text-black mt-1 py-10">
           <Link to="/">
