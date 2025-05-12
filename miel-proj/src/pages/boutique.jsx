@@ -17,42 +17,46 @@ export default function HoneyProduct() {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="text-4xl font-bold text-center text-[#333] mb-8"
+        className="text-4xl font-bold text-center text-gray-800 mb-8"
       >
         Découvrez notre Miel
       </motion.h1>
 
       {/* Product Card */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-6 rounded-lg shadow-lg w-full md:w-[550px] bg-white">
-        <img
-          src="./src/assets/pot-accueil.svg"
-          alt="Pot de miel"
-          className="w-32 h-32 object-cover rounded-lg shadow-md"
-        />
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-8 rounded-xl shadow-2xl w-full md:w-[650px] bg-white">
+        {/* Product Image */}
+        <div className="w-48 h-48 md:w-60 md:h-60 relative">
+          <img
+            src="./src/assets/pot-accueil.svg"
+            alt="Pot de miel"
+            className="w-full h-full object-cover rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-105"
+          />
+        </div>
 
         {/* Product Info */}
-        <div className="flex flex-col items-start space-y-5">
-          <h2 className="text-2xl font-bold text-[#808000]">Miel artisanal 250g</h2>
+        <div className="flex flex-col items-start space-y-6 md:space-y-8">
+        <h2 className="text-2xl font-semibold text-[#808000]">Miel artisanal 250g</h2>
+
 
           {/* Quantity Control */}
-          <div className="flex items-center gap-4 mt-4">
+          <div className="flex items-center gap-6 mt-4">
             <button
               onClick={() => setQuantity(Math.max(1, quantity - 1))}
-              className="px-5 py-2 bg-[#808000] text-white rounded-md shadow-lg hover:bg-[#6e6e00] transition duration-300 ease-in-out"
+              className="px-4 py-2 bg-[#808000] text-white rounded-md shadow-lg hover:bg-yellow-500 transition duration-300 ease-in-out"
             >
               -
             </button>
-            <span className="text-2xl font-semibold">{quantity}</span>
+            <span className="text-3xl font-semibold">{quantity}</span>
             <button
               onClick={() => setQuantity(quantity + 1)}
-              className="px-5 py-2 bg-[#808000] text-white rounded-md shadow-lg hover:bg-[#6e6e00] transition duration-300 ease-in-out"
+              className="px-4 py-2 bg-[#808000] text-white rounded-md shadow-lg hover:bg-yellow-500 transition duration-300 ease-in-out"
             >
               +
             </button>
           </div>
 
           {/* Price Display */}
-          <p className="text-xl font-semibold text-[#333] mt-4">{totalPrice.toFixed(2)} €</p>
+          <p className="text-2xl font-semibold text-gray-800 mt-4">{totalPrice.toFixed(2)} €</p>
 
           {/* Add to Cart Button */}
           <button
@@ -60,7 +64,7 @@ export default function HoneyProduct() {
               addToCart(quantity); // Add to global cart
               navigate("/pannier"); // Redirect to panier page
             }}
-            className="mt-4 bg-[#808000] hover:bg-[#6e6e00] text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out w-full"
+            className="mt-6 bg-[#808000] hover:bg-yellow-500 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out w-full"
           >
             Ajouter au Panier
           </button>

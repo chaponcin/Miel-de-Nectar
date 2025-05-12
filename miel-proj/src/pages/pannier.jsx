@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"; // <-- Add this import at the top
+
 import { useCart } from "../contexts/CartContext";
 import { useState } from "react";
 import pot250g from "../assets/potsoleil.jpeg";
@@ -16,7 +18,16 @@ function Pannier() {
 
   return (
     <div className="pt-[150px] px-6 md:px-20">
-      <h1 className="text-3xl font-bold mb-10 text-center">Mon panier</h1>
+
+
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="text-3xl font-bold mb-10 p-5 text-center"
+      >
+        Mon panier
+      </motion.h1>
 
       {cartItem ? (
         <div className="flex flex-col md:flex-row justify-center items-start gap-8">
