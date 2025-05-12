@@ -13,30 +13,32 @@ import Recettes from './pages/recettes';
 import Achete from './pages/achat';
 import Hamburger from './pages/hamburger';
 import Qui from './pages/qui';
+import { CartProvider } from './contexts/CartContext'; // ✅ Import your context
 import './App.css';
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1 bg-white-100 p-4">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/pannier" element={<Pannier />} />
-          <Route path="/connexion" element={<Login />} />
-          <Route path="/inscription" element={<Register />} />
-          <Route path="/boutique" element={<Boutique />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/recettes" element={<Recettes />} />
-          <Route path="/user" element={<User />} />
-          <Route path="/achat" element={<Achete />} />
-          <Route path="/menu" element={<Hamburger />} />
-          <Route path="/quisommes-nous" element={<Qui />} />
-      
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <CartProvider> {/* ✅ Wrap the app with CartProvider */}
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1 bg-white-100 p-4">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/pannier" element={<Pannier />} />
+            <Route path="/connexion" element={<Login />} />
+            <Route path="/inscription" element={<Register />} />
+            <Route path="/boutique" element={<Boutique />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/recettes" element={<Recettes />} />
+            <Route path="/user" element={<User />} />
+            <Route path="/achat" element={<Achete />} />
+            <Route path="/menu" element={<Hamburger />} />
+            <Route path="/quisommes-nous" element={<Qui />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </CartProvider>
   );
 }
 
