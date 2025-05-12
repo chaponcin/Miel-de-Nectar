@@ -43,7 +43,7 @@ function Login() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center pt-[100px]">
+    <div className="flex flex-col items-center justify-center pt-[150px]">
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}

@@ -50,7 +50,7 @@ const Section = ({ children, background, custom }) => (
 const Home = () => {
   return (
 
-    <div className="flex flex-col rounded-t-2xl pt-10">
+    <div className="flex flex-col rounded-t-2xl">
       <Section background={heroBackground} custom={0}>
         <h1 className="text-5xl font-bold mb-4 text-yellow-400 drop-shadow-[2px_2px_4px_rgba(0,0,0,0.8)]">
           Bienvenue sur Notre Site

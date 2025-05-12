@@ -9,8 +9,7 @@ export default function HoneyProduct() {
   const totalPrice = pricePerJar * quantity;
 
   return (
-<div className="flex flex-col items-center justify-center pt-[100px]">
-
+    <div className="flex flex-col items-center justify-center pt-[150px]">
       {/* Titre avec effet d'apparition */}
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
@@ -21,7 +20,7 @@ export default function HoneyProduct() {
         Boutique
       </motion.h1>
 
-      <div className="flex items-center gap-4 p-4 rounded-lg shadow-lg w-80">
+      <div className="flex items-center gap-4 p-4 rounded-lg shadow-lg w-80 bg-white">
         {/* Image du produit */}
         <img
           src="./src/assets/pot-accueil.svg"
@@ -52,6 +51,17 @@ export default function HoneyProduct() {
 
           {/* Prix total */}
           <p className="mt-2 text-xl font-semibold">{totalPrice.toFixed(2)} €</p>
+
+          {/* Bouton Ajouter */}
+          <button
+            onClick={() => {
+              // À remplacer par la logique de panier réelle
+              console.log(`Ajouté ${quantity} pot(s) au panier.`);
+            }}
+            className="mt-3 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition"
+          >
+            Ajouter
+          </button>
         </div>
       </div>
     </div>

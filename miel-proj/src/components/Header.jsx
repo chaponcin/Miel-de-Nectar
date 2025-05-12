@@ -17,10 +17,11 @@ function Header() {
   };
 
   return (
-<header className="footer-bg fixed top-0 left-0 w-full   z-50 px-6 bg-cover bg-center bg-transparent top-[-90px]">
+<header className="footer-bg fixed top-0 left-0 w-full z-50 px-6 bg-cover bg-center bg-transparent h-[260px] top-[-100px]">
+
 
       <div className="flex justify-between items-start">
-        <h1 className="text-xl font-bold text-black mt-12 py-10">
+        <h1 className="text-xl font-bold text-black mt-12 py-13">
           <Link to="/">
             <img src="./src/assets/logo.png" className="h-14 " alt="Logo" />
           </Link>
@@ -43,7 +44,7 @@ function Header() {
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-start space-x-4 mt-12 py-10">
+        <nav className="hidden md:flex items-start space-x-4 mt-12 py-13 font-semibold text-xl" >
           <Link to="/" className="text-black">Home</Link>
           <Link to="/Boutique" className="text-black">Boutique</Link>
           <Link to="/quisommes-nous" className="text-black">Qui sommes-nous</Link>
@@ -53,7 +54,7 @@ function Header() {
 
         
 
-        <nav className="hidden md:flex items-start space-x-4 mt-12 py-10">
+        <nav className="hidden md:flex items-start space-x-4 mt-12 py-13 ">
           <Link to="/pannier">
             <img src="./src/assets/pannier.svg" alt="Panier" className="h-6" />
           </Link>

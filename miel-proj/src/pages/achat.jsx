@@ -1,6 +1,6 @@
 function Achete() {
   return (
-    <div className="flex flex-col justify-start  px-8 space-y-4 pt-[100px]">
+    <div className="flex flex-col justify-start  px-8 space-y-4 pt-[150px]">
       <p className="text-[#D1B840] text-center font-bold">Merci de votre achat !</p>
       <p className="text-center pt-[20px]">Votre numéro de commande est le 1.</p>
       

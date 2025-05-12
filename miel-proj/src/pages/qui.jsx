@@ -2,7 +2,8 @@ import myImage from '../assets/logo.png'; // Import image
 
 function Qui() {
     return (
-      <div className="px-6 md:px-20 lg:px-40 py-16 text-justify leading-relaxed text-gray-800">
+<div className="px-6 md:px-20 lg:px-40 py-14 pt-24 text-justify leading-relaxed text-gray-800">
+
         {/* Container for the squares */}
         <div className="flex flex-wrap justify-center gap-10">
   
