@@ -1,9 +1,14 @@
+// src/contexts/CartContext.js
 import { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 
-export function CartProvider({ children }) {
-  const [cartItem, setCartItem] = useState(null);
+export const useCart = () => {
+  return useContext(CartContext);
+};
+
+export const CartProvider = ({ children }) => {
+  const [cartItem, setCartItem] = useState(null); // Initialize cart with no item
 
   const addToCart = (quantity) => {
     setCartItem({ quantity });
@@ -13,13 +18,15 @@ export function CartProvider({ children }) {
     setCartItem(null);
   };
 
+  const updateQuantity = (newQuantity) => {
+    if (cartItem) {
+      setCartItem({ ...cartItem, quantity: newQuantity });
+    }
+  };
+
   return (
-    <CartContext.Provider value={{ cartItem, addToCart, clearCart }}>
+    <CartContext.Provider value={{ cartItem, addToCart, clearCart, updateQuantity }}>
       {children}
     </CartContext.Provider>
   );
-}
-
-export function useCart() {
-  return useContext(CartContext);
-}
+};

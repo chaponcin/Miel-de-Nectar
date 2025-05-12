@@ -1,57 +1,114 @@
 import { useCart } from "../contexts/CartContext";
+import { useState } from "react";
 import pot250g from "../assets/250g.png";
 
 function Pannier() {
-  const { cartItem, clearCart } = useCart();
+  const { cartItem, clearCart, updateQuantity } = useCart();
   const pricePerUnit = 8;
+  
+  // If cartItem exists, calculate the total.
   const total = cartItem ? cartItem.quantity * pricePerUnit : 0;
 
+  const handleQuantityChange = (event) => {
+    const updatedQuantity = Number(event.target.value);
+    updateQuantity(updatedQuantity); // Update quantity in CartContext
+  };
+
   return (
-    <div className="pt-[150px] px-4">
-      <h1 className="text-2xl font-bold mb-6 text-center">Mon panier</h1>
+    <div className="pt-[150px] px-6 md:px-20">
+      <h1 className="text-3xl font-bold mb-10 text-center">Mon panier</h1>
 
       {cartItem ? (
-        <div className="flex flex-wrap justify-center gap-6">
-          {/* Product card */}
-          <div className="relative w-64 h-64 border rounded-lg shadow-md p-4 flex flex-col">
-            <button onClick={clearCart} className="absolute top-2 right-2 text-red-500 text-xl font-bold">&times;</button>
+        <div className="flex flex-col md:flex-row justify-center items-start gap-8">
+          {/* Product Card */}
+          <div className="relative w-full md:w-96 border rounded-lg shadow-md p-6 bg-white">
+            {/* Delete Button */}
+            <button
+              onClick={clearCart}
+              className="absolute top-2 right-2 text-red-600 text-2xl font-bold hover:text-red-800"
+              title="Supprimer"
+            >
+              &times;
+            </button>
 
-            <div className="flex flex-row items-center gap-4">
-              <img src={pot250g} alt="Pot de miel" className="w-24 h-24" />
+            <div className="flex gap-4 items-center">
+              <img
+                src={pot250g}
+                alt="Pot de miel"
+                className="w-28 h-28 object-cover rounded-lg"
+              />
               <div>
-                <p className="text-lg font-semibold">8,00 €</p>
+                <p className="text-lg font-semibold text-[#808000]">8,00 €</p>
                 <p>Miel artisanal 250g</p>
-                <p>Qté: {cartItem.quantity}</p>
+
+                {/* Scrollable Quantity Selector */}
+                <label className="block mt-4 text-sm font-medium">Qté:</label>
+                
+                <div className="flex items-center space-x-2">
+                  {/* Decrease Quantity Button (Smaller) */}
+                  <button
+                    onClick={() => updateQuantity(Math.max(1, cartItem.quantity - 1))}
+                    className="px-2 py-1 bg-[#808000] text-white rounded-md text-lg hover:bg-[#6e6e00] transition"
+                  >
+                    &#8595; {/* Up Arrow */}
+                  </button>
+
+                  {/* Quantity Input */}
+                  <input
+                    type="number"
+                    value={cartItem.quantity}
+                    min="1"
+                    max="10"
+                    step="1"
+                    onChange={handleQuantityChange}
+                    className="w-16 py-1 px-2 border border-gray-300 rounded-md text-center"
+                  />
+
+                  {/* Increase Quantity Button (Smaller) */}
+                  <button
+                    onClick={() => updateQuantity(Math.min(10, cartItem.quantity + 1))}
+                    className="px-2 py-1 bg-[#808000] text-white rounded-md text-lg hover:bg-[#6e6e00] transition"
+                  >
+                    &#8593; {/* Down Arrow */}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Total Box */}
-          <div className="relative border border-gray-300 rounded-lg p-6 w-72 shadow-md bg-white">
-            <button onClick={clearCart} className="absolute top-2 right-2 text-red-500 text-xl font-bold">&times;</button>
+          <div className="relative w-full md:w-80 border rounded-lg shadow-md p-6 bg-white">
+            {/* Delete Button */}
+            <button
+              onClick={clearCart}
+              className="absolute top-2 right-2 text-red-600 text-2xl font-bold hover:text-red-800"
+              title="Vider le panier"
+            >
+              &times;
+            </button>
 
-            <div className="flex justify-between text-lg mb-2">
-              <p>Sous-total</p>
-              <p className="font-semibold">{total.toFixed(2)} €</p>
+            <div className="space-y-4 pt-6">
+              <div className="flex justify-between text-lg">
+                <p>Sous-total</p>
+                <p className="font-semibold">{total.toFixed(2)} €</p>
+              </div>
+              <div className="flex justify-between text-lg">
+                <p>Livraison Standard</p>
+                <p className="text-green-700 font-medium">Gratuit</p>
+              </div>
+              <div className="flex justify-between text-xl font-bold border-t pt-4">
+                <p>Total</p>
+                <p>{total.toFixed(2)} €</p>
+              </div>
             </div>
 
-            <div className="flex justify-between text-lg mb-6">
-              <p>Livraison Standard</p>
-              <p>Gratuit</p>
-            </div>
-
-            <div className="flex justify-between text-xl font-bold mb-4">
-              <p>TOTAL</p>
-              <p>{total.toFixed(2)} €</p>
-            </div>
-
-            <button className="bg-[#808000] hover:bg-[#6e6e00] text-white font-bold py-2 px-6 rounded w-full">
+            <button className="mt-6 bg-[#808000] hover:bg-[#6e6e00] text-white font-bold py-2 px-6 rounded w-full transition">
               Paiement
             </button>
           </div>
         </div>
       ) : (
-        <p className="text-center text-xl text-gray-500 mt-12">Panier vide</p>
+        <p className="text-center text-xl text-gray-500 mt-20">Panier vide</p>
       )}
     </div>
   );
