@@ -1,6 +1,6 @@
 import { useCart } from "../contexts/CartContext";
 import { useState } from "react";
-import pot250g from "../assets/250g.png";
+import pot250g from "../assets/potsoleil.jpeg";
 
 function Pannier() {
   const { cartItem, clearCart, updateQuantity } = useCart();
@@ -32,10 +32,11 @@ function Pannier() {
             </button>
 
             <div className="flex gap-4 items-center">
+              {/* Larger Image */}
               <img
                 src={pot250g}
                 alt="Pot de miel"
-                className="w-28 h-28 object-cover rounded-lg"
+                className="w-48 h-48 object-cover rounded-lg"
               />
               <div>
                 <p className="text-lg font-semibold text-[#808000]">8,00 €</p>
@@ -50,7 +51,7 @@ function Pannier() {
                     onClick={() => updateQuantity(Math.max(1, cartItem.quantity - 1))}
                     className="px-2 py-1 bg-[#808000] text-white rounded-md text-lg hover:bg-[#6e6e00] transition"
                   >
-                    &#8595; {/* Up Arrow */}
+                    &#8595; {/* Down Arrow */}
                   </button>
 
                   {/* Quantity Input */}
@@ -69,7 +70,7 @@ function Pannier() {
                     onClick={() => updateQuantity(Math.min(10, cartItem.quantity + 1))}
                     className="px-2 py-1 bg-[#808000] text-white rounded-md text-lg hover:bg-[#6e6e00] transition"
                   >
-                    &#8593; {/* Down Arrow */}
+                    &#8593; {/* Up Arrow */}
                   </button>
                 </div>
               </div>
