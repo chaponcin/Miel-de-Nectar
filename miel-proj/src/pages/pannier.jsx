@@ -1,5 +1,4 @@
-import { motion } from "framer-motion"; // <-- Add this import at the top
-
+import { motion } from "framer-motion";
 import { useCart } from "../contexts/CartContext";
 import { useState } from "react";
 import pot250g from "../assets/potsoleil.jpeg";
@@ -7,33 +6,33 @@ import pot250g from "../assets/potsoleil.jpeg";
 function Pannier() {
   const { cartItem, clearCart, updateQuantity } = useCart();
   const pricePerUnit = 8;
-  
-  // If cartItem exists, calculate the total.
   const total = cartItem ? cartItem.quantity * pricePerUnit : 0;
 
   const handleQuantityChange = (event) => {
     const updatedQuantity = Number(event.target.value);
-    updateQuantity(updatedQuantity); // Update quantity in CartContext
+    updateQuantity(updatedQuantity);
   };
 
   return (
-    <div className="  px-6 md:px-20">
-
-
+    <div className="px-6 md:px-20">
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="text-3xl font-bold  p-5 text-center mb-10 pt-[100px] "
+        className="text-3xl font-bold p-5 text-center mb-10 pt-[100px]"
       >
-        Mon Panier
+        Mon panier
       </motion.h1>
 
       {cartItem ? (
-        <div className="flex flex-col md:flex-row justify-center items-start gap-8">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="flex flex-col md:flex-row justify-center items-start gap-8"
+        >
           {/* Product Card */}
           <div className="relative w-full md:w-96 border rounded-lg shadow-md p-6 bg-white">
-            {/* Delete Button */}
             <button
               onClick={clearCart}
               className="absolute top-2 right-2 text-red-600 text-2xl font-bold hover:text-red-800"
@@ -43,7 +42,6 @@ function Pannier() {
             </button>
 
             <div className="flex gap-4 items-center">
-              {/* Larger Image */}
               <img
                 src={pot250g}
                 alt="Pot de miel"
@@ -53,19 +51,16 @@ function Pannier() {
                 <p className="text-lg font-semibold text-[#808000]">8,00 €</p>
                 <p>Miel artisanal 250g</p>
 
-                {/* Scrollable Quantity Selector */}
                 <label className="block mt-4 text-sm font-medium">Qté:</label>
-                
+
                 <div className="flex items-center space-x-2">
-                  {/* Decrease Quantity Button (Smaller) */}
                   <button
                     onClick={() => updateQuantity(Math.max(1, cartItem.quantity - 1))}
                     className="px-2 py-1 bg-[#808000] text-white rounded-md text-lg hover:bg-[#6e6e00] transition"
                   >
-                    &#8595; {/* Down Arrow */}
+                    &#8595;
                   </button>
 
-                  {/* Quantity Input */}
                   <input
                     type="number"
                     value={cartItem.quantity}
@@ -76,12 +71,11 @@ function Pannier() {
                     className="w-16 py-1 px-2 border border-gray-300 rounded-md text-center"
                   />
 
-                  {/* Increase Quantity Button (Smaller) */}
                   <button
                     onClick={() => updateQuantity(Math.min(10, cartItem.quantity + 1))}
                     className="px-2 py-1 bg-[#808000] text-white rounded-md text-lg hover:bg-[#6e6e00] transition"
                   >
-                    &#8593; {/* Up Arrow */}
+                    &#8593;
                   </button>
                 </div>
               </div>
@@ -90,7 +84,6 @@ function Pannier() {
 
           {/* Total Box */}
           <div className="relative w-full md:w-80 border rounded-lg shadow-md p-6 bg-white mb-10">
-            {/* Delete Button */}
             <button
               onClick={clearCart}
               className="absolute top-2 right-2 text-red-600 text-2xl font-bold hover:text-red-800"
@@ -118,7 +111,7 @@ function Pannier() {
               Paiement
             </button>
           </div>
-        </div>
+        </motion.div>
       ) : (
         <p className="text-center text-xl text-gray-500 mt-20">Panier vide</p>
       )}

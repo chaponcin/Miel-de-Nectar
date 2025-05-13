@@ -35,7 +35,7 @@ export default function HoneyProduct() {
           {/* Product Image */}
           <div className="w-60 h-60 md:w-72 md:h-72 relative">
             <img
-              src="./src/assets/pot-accueil.svg"
+              src="./src/assets/soleil.jpg"
               alt="Pot de miel"
               className="w-full h-full object-cover rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-105"
             />
