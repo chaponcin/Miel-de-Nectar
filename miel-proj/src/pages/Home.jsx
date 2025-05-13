@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import heroBackground from '../assets/appi.jpg';
-import aboutBackground from '../assets/appi.jpg';
-import productsBackground from '../assets/appi.jpg';
+import aboutBackground from '../assets/app.png';
+import productsBackground from '../assets/photo3.jpg';
 import contactBackground from '../assets/appi.jpg';
 
 const sectionVariants = {
@@ -38,7 +38,7 @@ const Section = ({ children, background, custom }) => (
     />
     
     {/* Dégradé pour fondus doux sur les bords */}
-    <div className="absolute top-0 left-0 w-full h-full z-0 bg-gradient-to-t from-black/40 via-transparent to-black/40 pointer-events-none" />
+<div className="absolute top-0 left-0 w-full h-full z-0 bg-black/30 pointer-events-none" />
 
     {/* Contenu */}
     <div className="z-10 max-w-4xl">

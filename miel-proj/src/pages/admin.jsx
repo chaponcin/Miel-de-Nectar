@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -39,10 +40,13 @@ const mockOrders = [
     codePostal: "13001",
     montant: 29.99,
     statut: "En cours",
+
   },
 ];
 
 function Admin() {
+
+
   const [clients, setClients] = useState([]);
   const [orders, setOrders] = useState([]);
 
@@ -214,8 +218,11 @@ function Admin() {
           )}
         </div>
       </motion.div>
+
     </div>
   );
 }
+
+
 
 export default Admin;
