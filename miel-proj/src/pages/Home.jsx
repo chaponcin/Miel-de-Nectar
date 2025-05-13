@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import heroBackground from '../assets/appi.jpg';
-import aboutBackground from '../assets/appi.jpg';
-import productsBackground from '../assets/appi.jpg';
+import aboutBackground from '../assets/app.png';
+import productsBackground from '../assets/photo3.jpg';
 import contactBackground from '../assets/appi.jpg';
 
 const sectionVariants = {

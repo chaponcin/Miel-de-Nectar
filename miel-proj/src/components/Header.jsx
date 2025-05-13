@@ -47,7 +47,7 @@ function Header() {
           <Link to="/" className="text-black">Home</Link>
           <Link to="/Boutique" className="text-black">Boutique</Link>
           <Link to="/quisommes-nous" className="text-black">Qui sommes-nous</Link>
-          <Link to="/recettes" className="text-black">Recettes</Link>
+          <Link to="/recettes" className="text-black">Nos recettes</Link>
           <Link to="/Contact" className="text-black">Contact</Link>
         </nav>
 
