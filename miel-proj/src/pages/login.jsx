@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from '../contexts/AuthContext';
-
+import { useAuth } from "../contexts/AuthContext";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -11,7 +10,6 @@ function Login() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const { login } = useAuth();
-
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -26,11 +24,16 @@ function Login() {
 
       if (response.ok) {
         const data = await response.json();
-        // data.token, data.user
         Cookies.set("userToken", data.token, { path: "/" });
-      
-        login(data.token); // ⬅️ Passe aussi les infos de l'utilisateur
-        navigate("/");
+
+        login(data.token); // Authentifie l'utilisateur dans le contexte
+
+        // ✅ Redirection admin si l'email correspond
+        if (email === "philippeneo@gmail.com") {
+          navigate("/admin");
+        } else {
+          navigate("/");
+        }
 
       } else {
         const res = await response.json();
@@ -43,8 +46,8 @@ function Login() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center pt-[150px]">
-      <motion.h1
+<div className="h-screen flex flex-col justify-center items-center">
+<motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -63,7 +66,7 @@ function Login() {
           {error && <div className="text-red-500 mb-2">{error}</div>}
 
           <h2 className="text-lg mb-2">Adresse email</h2>
-          <input 
+          <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -72,7 +75,7 @@ function Login() {
           />
 
           <h2 className="text-lg mt-4 mb-2">Mot de passe</h2>
-          <input 
+          <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -82,13 +85,13 @@ function Login() {
 
           <button
             type="submit"
-            className="w-full mt-6 p-2 bg-blue-500 text-black rounded-lg hover:bg-blue-600 transition"
+            className="w-full mt-6 p-2 bg-[#808000] text-white font-semibold rounded-lg hover:bg-blue-600 transition"
           >
             Se connecter
           </button>
 
           <h2 className="text-center mt-4">
-            <a href="/register" className="text-yellow-500 hover:underline">
+            <a href="/inscription" className="text-[#808000] hover:underline">
               S'inscrire
             </a>
           </h2>

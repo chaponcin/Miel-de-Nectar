@@ -17,16 +17,16 @@ function Pannier() {
   };
 
   return (
-    <div className="pt-[150px] px-6 md:px-20">
+    <div className="  px-6 md:px-20">
 
 
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="text-3xl font-bold mb-10 p-5 text-center"
+        className="text-3xl font-bold  p-5 text-center mb-10 pt-[100px] "
       >
-        Mon panier
+        Mon Panier
       </motion.h1>
 
       {cartItem ? (
@@ -89,7 +89,7 @@ function Pannier() {
           </div>
 
           {/* Total Box */}
-          <div className="relative w-full md:w-80 border rounded-lg shadow-md p-6 bg-white">
+          <div className="relative w-full md:w-80 border rounded-lg shadow-md p-6 bg-white mb-10">
             {/* Delete Button */}
             <button
               onClick={clearCart}

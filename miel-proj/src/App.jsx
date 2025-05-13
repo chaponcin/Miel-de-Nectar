@@ -15,6 +15,7 @@ import Hamburger from './pages/hamburger';
 import Qui from './pages/qui';
 import Admin from './pages/admin';
 import { CartProvider } from './contexts/CartContext'; // ✅ Import your context
+
 import './App.css';
 
 function App() {
