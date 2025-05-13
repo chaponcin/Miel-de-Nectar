@@ -17,7 +17,7 @@ function Header() {
   };
 
   return (
-<header className="footer-bg fixed left-0  z-50 px-6   bg-no-repeat top-[-40px]  w-screen bg-contain">
+<header className="footer-bg fixed left-0  z-50 px-6   bg-no-repeat top-[-40px]  w-screen bg-contain h-[135px]">
 
       <div className="flex justify-between items-start">
         <h1 className="text-xl font-bold text-black mt-9">
@@ -60,8 +60,8 @@ function Header() {
 
           {!isLoggedIn ? (
             <>
-              <Link to="/inscription" className=" mt-1 text-white bg-black hover:bg-green-900 font-bold px-2 py-1 rounded-lg transition">Inscription</Link>
-              <Link to="/connexion" className=" mt-1 text-white bg-black hover:bg-green-900 font-bold px-2 py-1 rounded-lg transition">Connexion</Link>
+              <Link to="/inscription" className="  text-white bg-black hover:bg-green-900 font-bold px-2 py-1 rounded-lg transition">Inscription</Link>
+              <Link to="/connexion" className="text-white bg-black hover:bg-green-900 font-bold px-2 py-1 rounded-lg transition">Connexion</Link>
             </>
           ) : (
             <>

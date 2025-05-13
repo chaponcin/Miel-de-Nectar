@@ -11,7 +11,7 @@ export default function HoneyProduct() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center justify-center pt-[130px] px-6 md:px-16">
+    <div className="flex flex-col  px-6 md:px-16 pt-[50px]">
       {/* Title with animation */}
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
@@ -23,7 +23,7 @@ export default function HoneyProduct() {
       </motion.h1>
 
       {/* Product Card */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-8 rounded-xl shadow-2xl w-full md:w-[650px] bg-white">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-8 rounded-xl shadow-2xl w-full md:w-[650px] bg-white mb-10">
         {/* Product Image */}
         <div className="w-48 h-48 md:w-60 md:h-60 relative">
           <img

@@ -75,7 +75,7 @@ function Register() {
 
   return (
 
-<div className="text-center flex flex-col items-center justify-center pt-[150px]">
+<div className="h-screen flex flex-col justify-center items-center">
 
       <motion.h1
         initial={{ opacity: 0, y: -50 }}

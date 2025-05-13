@@ -46,8 +46,8 @@ function Login() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center pt-[150px]">
-      <motion.h1
+<div className="h-screen flex flex-col justify-center items-center">
+<motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -85,7 +85,7 @@ function Login() {
 
           <button
             type="submit"
-            className="w-full mt-6 p-2 bg-[#808000] text-white font-semibold rounded-lg hover:bg-yellow-500 transition"
+            className="w-full mt-6 p-2 bg-[#808000] text-white font-semibold rounded-lg hover:bg-blue-600 transition"
           >
             Se connecter
           </button>
