@@ -93,7 +93,7 @@ function Admin() {
   };
 
   return (
-    <div className="min-h-screen bg-yellow-100 flex flex-col items-center p-6">
+    <div className="min-h-screen bg-yellow-100 flex flex-col items-center p-25">
       {/* Titre */}
       <motion.h1
         variants={containerVariants}
