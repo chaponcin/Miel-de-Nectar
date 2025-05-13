@@ -166,12 +166,12 @@ function Register() {
               </label>
             </div>
 
-            <button type="submit" className="w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+            <button type="submit" className="w-full p-2 bg-[#808000] text-white rounded hover:bg-blue-600 transition">
               S'inscrire
             </button>
 
             <p className="mt-4">
-              <Link to="/login" className="text-yellow-500 hover:underline">
+              <Link to="/login" className="text-[#808000] hover:underline">
                 Vous avez déjà un compte ?
               </Link>
             </p>

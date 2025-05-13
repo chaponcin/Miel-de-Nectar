@@ -13,7 +13,9 @@ import Recettes from './pages/recettes';
 import Achete from './pages/achat';
 import Hamburger from './pages/hamburger';
 import Qui from './pages/qui';
+import Admin from './pages/admin';
 import { CartProvider } from './contexts/CartContext'; // ✅ Import your context
+
 import './App.css';
 
 function App() {
@@ -34,6 +36,7 @@ function App() {
             <Route path="/achat" element={<Achete />} />
             <Route path="/menu" element={<Hamburger />} />
             <Route path="/quisommes-nous" element={<Qui />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
         <Footer />

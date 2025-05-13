@@ -35,7 +35,7 @@ export default function HoneyProduct() {
 
         {/* Product Info */}
         <div className="flex flex-col items-start space-y-6 md:space-y-8">
-        <h2 className="text-2xl font-semibold text-[#808000]">Miel artisanal 250g</h2>
+        <h2 className="text-2xl font-semibold text-black">Miel artisanal 250g</h2>
 
 
           {/* Quantity Control */}
@@ -56,7 +56,7 @@ export default function HoneyProduct() {
           </div>
 
           {/* Price Display */}
-          <p className="text-2xl font-semibold text-gray-800 mt-4">{totalPrice.toFixed(2)} €</p>
+          <p className="text-2xl font-semibold text-[#808000] mt-4">{totalPrice.toFixed(2)} €</p>
 
           {/* Add to Cart Button */}
           <button
