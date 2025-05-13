@@ -91,7 +91,7 @@ function Login() {
           </button>
 
           <h2 className="text-center mt-4">
-            <a href="/register" className="text-[#808000] hover:underline">
+            <a href="/inscription" className="text-[#808000] hover:underline">
               S'inscrire
             </a>
           </h2>

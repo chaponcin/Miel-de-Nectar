@@ -38,7 +38,7 @@ const Section = ({ children, background, custom }) => (
     />
     
     {/* Dégradé pour fondus doux sur les bords */}
-    <div className="absolute top-0 left-0 w-full h-full z-0 bg-gradient-to-t from-black/40 via-transparent to-black/40 pointer-events-none" />
+<div className="absolute top-0 left-0 w-full h-full z-0 bg-black/30 pointer-events-none" />
 
     {/* Contenu */}
     <div className="z-10 max-w-4xl">

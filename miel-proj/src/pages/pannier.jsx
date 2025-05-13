@@ -26,7 +26,7 @@ function Pannier() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="text-3xl font-bold  p-5 text-center mb-10 pt-[100px] "
       >
-        Mon panier
+        Mon Panier
       </motion.h1>
 
       {cartItem ? (

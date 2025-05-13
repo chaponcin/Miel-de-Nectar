@@ -22,6 +22,13 @@ export default function HoneyProduct() {
         Découvrez notre Miel
       </motion.h1>
 
+      <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className=" "
+        >
+
       {/* Product Card centered horizontally */}
       <div className="flex justify-center w-full">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-8 rounded-xl shadow-2xl bg-white mb-10 w-full max-w-xl">
@@ -75,6 +82,7 @@ export default function HoneyProduct() {
           </div>
         </div>
       </div>
+      </motion.div>
     </div>
   );
 }
