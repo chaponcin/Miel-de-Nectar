@@ -16,7 +16,10 @@ function Header() {
   };
 
   return (
-    <header className="footer-bg fixed left-0 z-50 px-6 bg-no-repeat top-[-40px] w-screen bg-container py-3">
+
+<header className="footer-bg fixed left-0  z-50 px-6   bg-no-repeat top-[-40px]  w-screen bg-contain h-[135px]">
+
+
       <div className="flex justify-between items-start">
         <h1 className="text-xl font-bold text-black mt-9">
           <Link to="/">
@@ -41,24 +44,30 @@ function Header() {
         </button>
 
         {/* Desktop Navigation */}
+
         <nav className="hidden md:flex items-start space-x-4 mt-9 font-semibold text-xl">
+
           <Link to="/" className="text-black">Home</Link>
           <Link to="/Boutique" className="text-black">Boutique</Link>
           <Link to="/quisommes-nous" className="text-black">Qui sommes-nous</Link>
-          <Link to="/recettes" className="text-black">Recettes</Link>
+          <Link to="/recettes" className="text-black">Nos recettes</Link>
           <Link to="/Contact" className="text-black">Contact</Link>
         </nav>
+
 
         {/* Buttons (Connexion, Inscription, Panier) */}
         <nav className="hidden md:flex items-start space-x-2 py-12">
           <Link to="/pannier" className="mt-[-10px]">
+
             <img src="./src/assets/pannier.svg" alt="Panier" className="h-8" />
           </Link>
 
           {!isLoggedIn ? (
             <>
+
               <Link to="/inscription" className="mt-[-10px] text-white bg-black hover:bg-green-900 font-bold px-2 py-1 rounded-lg transition">Inscription</Link>
               <Link to="/connexion" className="mt-[-10px] text-white bg-black hover:bg-green-900 font-bold px-2 py-1 rounded-lg transition">Connexion</Link>
+
             </>
           ) : (
             <>
