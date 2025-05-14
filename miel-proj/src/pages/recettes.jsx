@@ -292,5 +292,6 @@ function Recettes() {
     </div>
   );
 }
+// Styles pour le livre
 
 export default Recettes;
