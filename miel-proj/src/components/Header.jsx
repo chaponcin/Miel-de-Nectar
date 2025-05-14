@@ -11,25 +11,26 @@ function Header() {
     navigate('/');
   };
 
-  // Function to handle the hamburger menu click and navigate to a new page
   const handleHamburgerClick = () => {
-    navigate('/menu'); // Replace '/your-new-page' with the desired route
+    navigate('/menu');
   };
 
   return (
+
 <header className="footer-bg fixed left-0  z-50 px-6   bg-no-repeat top-[-40px]  w-screen bg-contain h-[135px]">
+
 
       <div className="flex justify-between items-start">
         <h1 className="text-xl font-bold text-black mt-9">
           <Link to="/">
-            <img src="./src/assets/logo.png" className="h-14 " alt="Logo" />
+            <img src="./src/assets/logo.png" className="h-23" alt="Logo" />
           </Link>
         </h1>
 
         {/* Hamburger button (visible on small screens) */}
         <button
           className="md:hidden text-black mt-2 py-10"
-          onClick={handleHamburgerClick} // Call the function to navigate when the hamburger is clicked
+          onClick={handleHamburgerClick}
         >
           <svg
             className="w-8 h-8"
@@ -43,7 +44,9 @@ function Header() {
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-start space-x-4 mt-9  font-semibold text-xl" >
+
+        <nav className="hidden md:flex items-start space-x-4 mt-9 font-semibold text-xl">
+
           <Link to="/" className="text-black">Home</Link>
           <Link to="/Boutique" className="text-black">Boutique</Link>
           <Link to="/quisommes-nous" className="text-black">Qui sommes-nous</Link>
@@ -51,17 +54,20 @@ function Header() {
           <Link to="/Contact" className="text-black">Contact</Link>
         </nav>
 
-        
 
-        <nav className="hidden md:flex items-start space-x-3 py-12 ">
-          <Link to="/pannier">
+        {/* Buttons (Connexion, Inscription, Panier) */}
+        <nav className="hidden md:flex items-start space-x-2 py-12">
+          <Link to="/pannier" className="mt-[-10px]">
+
             <img src="./src/assets/pannier.svg" alt="Panier" className="h-8" />
           </Link>
 
           {!isLoggedIn ? (
             <>
-              <Link to="/inscription" className="  text-white bg-black hover:bg-green-900 font-bold px-2 py-1 rounded-lg transition">Inscription</Link>
-              <Link to="/connexion" className="text-white bg-black hover:bg-green-900 font-bold px-2 py-1 rounded-lg transition">Connexion</Link>
+
+              <Link to="/inscription" className="mt-[-10px] text-white bg-black hover:bg-green-900 font-bold px-2 py-1 rounded-lg transition">Inscription</Link>
+              <Link to="/connexion" className="mt-[-10px] text-white bg-black hover:bg-green-900 font-bold px-2 py-1 rounded-lg transition">Connexion</Link>
+
             </>
           ) : (
             <>
@@ -78,7 +84,7 @@ function Header() {
       </div>
 
       {/* Mobile Navigation Menu */}
-      {false && ( // Set to false to avoid showing the mobile menu
+      {false && (
         <div className="md:hidden mt-2 flex flex-col space-y-2 bg-[#fafafa]">
           <Link to="/" className="text-black">Home</Link>
           <Link to="/Boutique" className="text-black">Boutique</Link>
@@ -96,10 +102,7 @@ function Header() {
             <>
               <Link to="/profile" className="text-white bg-black hover:bg-green-900 font-bold px-2 py-1 rounded-lg transition">Mon Compte</Link>
               <button
-                onClick={() => {
-                  handleLogout();
-                  // setMobileMenuOpen(false); // No need to close menu, as it's not opening
-                }}
+                onClick={handleLogout}
                 className="text-white bg-red-600 hover:bg-red-700 font-bold px-2 py-1 rounded-lg transition"
               >
                 Déconnexion
