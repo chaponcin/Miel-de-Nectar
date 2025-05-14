@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import heroBackground from '../assets/appi.jpg';
 import aboutBackground from '../assets/app.png';
 import productsBackground from '../assets/photo3.jpg';
-import contactBackground from '../assets/appi.jpg';
+import contactBackground from '../assets/photo5.jpg';
 
 const sectionVariants = {
   hidden: (i) => ({
