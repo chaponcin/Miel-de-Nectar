@@ -29,14 +29,14 @@ class AddresseController extends Controller
 
         try {
 
-            $data['rue'] = htmlspecialchars($data['rue']);
-            $data['code_postal'] = intval($data['code_postal']);
-            $data['ville'] = htmlspecialchars($data['ville']);
-            $data['pays'] = htmlspecialchars($data['pays']);
-            $data['numero'] = intval($data['numero']);
-            $data['id_user'] = intval($id_user);
+            $data['rue'] = $data['rue'];
+            $data['code_postal'] = $data['code_postal'];
+            $data['ville'] = $data['ville'];
+            $data['pays'] = $data['pays'];
+            $data['numero'] =$data['numero'];
+            $data['id_user'] =$id_user;
 
-            if (isset($data['boite'])) $data['boite'] = htmlspecialchars($data['boite']);
+            if (isset($data['boite'])) $data['boite'] = $data['boite'];
 
             $address = Adresse::create($data);
 

@@ -16,7 +16,6 @@ class Produit extends Model
         'description',
         'price',
         'stock',
-        // Add other columns as needed
     ];
 
     public function avis()
